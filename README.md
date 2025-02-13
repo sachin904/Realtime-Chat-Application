@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Realtime Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **Realtime Chat Application** built using **React.js** for the frontend and **WebSockets** for real-time communication. Users can join rooms and send messages instantly.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Real-time messaging using WebSockets
+- Join specific chat rooms
+- Simple and clean UI with Tailwind CSS
+- Persistent connection with WebSocket server
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend:** React.js, TypeScript, Tailwind CSS
+- **Backend:** Node.js, WebSocket
 
-- Configure the top-level `parserOptions` property like this:
+## 📌 Installation & Setup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/sachin904/Realtime-Chat-Application.git
+cd Realtime-Chat-Application
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2️⃣ Install Dependencies
+```sh
+npm install
 ```
+
+### 3️⃣ Start the Frontend
+```sh
+npm run dev
+```
+
+### 4️⃣ Start the WebSocket Server
+_(Ensure that you have a WebSocket server running at `ws://localhost:8080`)_
+
+```sh
+node server.js  # If you have a WebSocket server file
+```
+
+
+## 🚀 Usage
+1. Open the application in your browser.
+2. Join a chat room by sending a `roomId`.
+3. Start sending messages in real-time!
+
+## 🛠️ Project Structure
+```
+📂 Realtime-Chat-Application
+├── 📁 src
+│   ├── 📄 App.tsx  # Main React component
+│   ├── 📄 index.tsx # Entry point
+│   ├── 📁 components  # UI Components (if any)
+├── 📄 package.json
+├── 📄 README.md
+└── 📄 server.js (if applicable)
+```
+
+
+
+## 💡 Contributing
+Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
+
+
+
+Happy coding! 🚀
