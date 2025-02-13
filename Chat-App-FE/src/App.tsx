@@ -5,22 +5,26 @@ import './App.css'
 function App() {
   const[message,setMessages]=useState(["hiii","hii there"]);
   const inputRef =useRef<HTMLInputElement>(null); 
-  const wsRef=useRef();
+  const wsRef = useRef<WebSocket | null>(null);
   function sendMessage(){
+    if(wsRef.current){
   wsRef.current.send(JSON.stringify({
     type:"chat",
     payload:{
       message:inputRef.current?.value
     }
   }))
+}
   }
   function sendRoomId(){
+    if(wsRef.current){
     wsRef.current.send(JSON.stringify({
       type:"join",
       payload:{
         roomId:"red"
       }
     }))
+  }
   }
  
   useEffect(()=>{
